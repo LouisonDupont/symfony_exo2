@@ -1,10 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block body %}
     {{ form_start(form) }}
-{#    <div class="my-custom-class-for-errors">#}
-{#        {{ form_errors(form) }}#}
-{#    </div>#}
-
     <div class="row">
         <div class="col mb-3">
             {{ form_row(form.title) }}
@@ -29,4 +25,8 @@
         </div>
     </div>
     {{ form_end(form) }}
+
+    {% if is_granted('ROLE_EDITOR') %}
+        <a href="{{ path('new_article') }}">Ecrire un nouvel article</a>
+    {% endif %}
 {% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{% if app.user %}
+    <div class="mb-3">
+        You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+    </div>
+{% endif %}
+
+{{ form_start(form_register) }}
+
+<div class="row">
+    <div class="col mb-3">
+        {{ form_row(form_register.firstname) }}
+    </div>
+</div>
+<div class="row">
+    <div class="col mb-3">
+        {{ form_row(form_register.lastname) }}
+    </div>
+</div>
+<div class="row">
+    <div class="col mb-3">
+        {{ form_row(form_register.email) }}
+    </div>
+</div>
+<div class="row">
+    <div class="col mb-3">
+        {{ form_row(form_register.password) }}
+    </div>
+</div>
+<div class="row">
+    <div class="col mb-3">
+        {{ form_row(form_register.register) }}
+    </div>
+</div>
+
+{{ form_end(form_register) }}
+
+{% endblock %}

@@ -20,4 +20,8 @@
         {% endfor %}
     </ul>
 </div>
+
+{% if is_granted('ROLE_EDITOR') %}
+    <a href="{{ path('new_article') }}">Ecrire un nouvel article</a>
+{% endif %}
 {% endblock %}
