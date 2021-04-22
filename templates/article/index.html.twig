@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h1>Mes Articles</h1>
+
+<div>
+
+    <ul>
+        {% for article in articles %}
+            <div class="row">
+                <div class="col-sm">
+                    <h2 class="article_title display-6">{{article.title}}</h2>
+                    <p class="article_resume"><small>{{article.resume}}</small></p>
+                    <p class="article_contenu">{{article.contenu}}</p>
+                </div>
+                <div class="col-sm">
+                    <p class="article_author blockquote">{{article.author}}</p>
+                    <p class="article_date blockquote-footer">{{article.date|date("d/m/Y")}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
