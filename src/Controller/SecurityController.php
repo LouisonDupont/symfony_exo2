@@ -30,8 +30,10 @@ class SecurityController extends AbstractController
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        if ($this->getUser()) {
-             return $this->redirectToRoute('target_path');
+
+        // ICI, je déclare qu'après ma connexion, si mon user est égale a Role Admin ou Role Super Admin, je suis redirigé vers la page admin
+        if ($this->isGranted('ROLE_ADMIN')) {
+             return $this->redirectToRoute('admin');
         }
 
         // get the login error if there is one
