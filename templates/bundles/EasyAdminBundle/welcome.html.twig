@@ -1,16 +1,28 @@
 {# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
 {% extends '@EasyAdmin/page/content.html.twig' %}
 
-{% block page_title 'Welcome to EasyAdmin 3' %}
+{% block page_title '_' %}
 
 {% block page_content %}
     <style>
-        p { max-width: 600px; }
-    </style>
+        .welcome_container{
+            max-width: 120rem;
+            min-height: 80vh;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
 
-    <p>
-        <strong>Coucou et bienvenue sur l'espace Admin !</strong>
-    </p>
+        .welcome_title{
+            display: inline-block;
+            font-size: 30px;
+        }
+    </style>
+    <div class="welcome_container">
+        <p class="welcome_title"><strong>Bienvenue sur l'espace Admin !</strong></p>
+    </div>
 
 
 {% endblock %}

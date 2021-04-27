@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Article;
 use App\Entity\User;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -22,10 +23,15 @@ class userController extends AbstractDashboardController
         return parent::index();
     }
 
+    public function configureAssets(): Assets
+    {
+        return Assets::new()->addCssFile('css/admin.css');
+    }
+
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Symfony Exo2');
+            ->setTitle('Mon Blog');
     }
 
     public function configureMenuItems(): iterable

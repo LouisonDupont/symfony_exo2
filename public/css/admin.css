@@ -1,0 +1,8 @@
+/* public/css/admin.css */
+:root {
+    /* make the backend contents as wide as the browser window */
+    --body-max-width: 100%;
+    /* change the background color of the <body> */
+    --body-bg: #c6ecd9;
+    --primary: #339966;
+}
